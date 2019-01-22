@@ -14,4 +14,4 @@ Github é um exemplo de:
 |RxJava|
 
 # Tela de exemplo
-![](https://github.com/guilhermegrijo/Github/blob/master/GIF-190118_145927.gif?s=200)
+<img src="https://github.com/guilhermegrijo/Github/blob/master/GIF-190118_145927.gif"  width="360" height="480">
