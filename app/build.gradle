@@ -1,0 +1,75 @@
+apply plugin: 'com.android.application'
+
+
+
+project.ext {
+
+    daggerVersion = "2.19"
+    butterKnifeVersion = "9.0.0-rc2"
+    reactivexVersion = "2.0.2"
+    retrofit = "2.5.0"
+    gson = "2.8.5"
+}
+
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.example.pc.github"
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    android.defaultConfig.vectorDrawables.useSupportLibrary = true
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha3'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0-alpha01'
+    implementation 'com.android.support:appcompat-v7:28'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+
+    //Reactivex
+    implementation "io.reactivex.rxjava2:rxandroid:$project.reactivexVersion"
+    implementation "io.reactivex.rxjava2:rxjava:$project.reactivexVersion"
+
+    // Dagger core
+    annotationProcessor "com.google.dagger:dagger-compiler:$project.daggerVersion"
+    implementation "com.google.dagger:dagger:$project.daggerVersion"
+
+    //Dagger Android
+    annotationProcessor "com.google.dagger:dagger-android-processor:$project.daggerVersion"
+    implementation "com.google.dagger:dagger-android-support:$project.daggerVersion"
+    testAnnotationProcessor "com.google.dagger:dagger-compiler:$project.daggerVersion"
+    androidTestAnnotationProcessor "com.google.dagger:dagger-compiler:$project.daggerVersion"
+
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha2'
+
+    //butter knife
+    annotationProcessor "com.jakewharton:butterknife-compiler:$project.butterKnifeVersion"
+    implementation "com.jakewharton:butterknife:$project.butterKnifeVersion"
+
+    //retrofit
+    implementation "com.squareup.retrofit2:retrofit:$project.retrofit"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$project.retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$project.retrofit"
+
+    //gson
+    implementation "com.google.code.gson:gson:$project.gson"
+}

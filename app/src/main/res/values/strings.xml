@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">GitHub</string>
+    <string name="search_view">Buscar projetos</string>
+    <string name="subtitle">Exemplo de App MVVM</string>
+</resources>
